@@ -1,54 +1,52 @@
 package plane;
-import org.apache.log4j.*;
+
 
 public class Airliner extends Plane {
+	private int volumePassengerCompartment;
+	private int seatingCampacity;
 
-	String nameFile;
-		
-	protected int seating;
-	
-	public Airliner(){}
-	
-	public Airliner (String name, int maxHeight, int fuelConsumption,
-						int range, int seating){
-		nameFile="Log4j.properties";
-		PropertyConfigurator.configure(nameFile);
-		
-		try{
-			
-			if (maxHeight<=0){
-				throw new Exception("Ellegal argument");
-			}
-			
-		}catch (Exception e){
-			Logger.getLogger(e.getClass()).log(Level.ERROR, "Catched!",e);
-		}
-		this.name=name;
-		this.maxHeight=maxHeight;
-		this.seating=seating;
-		this.fuelConsumption=fuelConsumption;
-		this.range = range;
-		
-		
-		
+	public Airliner(String name, int fuelConsumption, int fligtRange,
+			int volumePassengerCompartment,int seatingCampacity ) {
+		super(name, fuelConsumption, fligtRange);
+	this.volumePassengerCompartment=volumePassengerCompartment;
+	this.seatingCampacity=seatingCampacity;
 	}
-	
+	public int getVolumePassengerCompartment(){
+		return volumePassengerCompartment;
+	}
+	public void setVolumePassengerCompartment(int volumePassengerCompartment){
+		this.volumePassengerCompartment=volumePassengerCompartment;
+	}
+public int getSeatingCampacity(){
+	return seatingCampacity;
+}
+public void setseatingCampacity(int seatingCampacity){
+	this.seatingCampacity=seatingCampacity;
+}
+	@Override
 	public void fly() {
+		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	
-	public String toString(){
-		StringBuilder builder = new StringBuilder();
-		builder.append(" Seating "+this.seating);
-		return super.toString()+builder.toString();
-	}
-
-	public int getSeating() {
-		return seating;
-	}
-
-	public void setSeating(int seating) {
-		this.seating = seating;
-	}
-
+	
 }
