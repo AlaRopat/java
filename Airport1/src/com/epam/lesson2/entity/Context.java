@@ -10,8 +10,8 @@ public class Context {
 		this.plane = plane;
 	}
 
-	public void flyPlane() {
-		plane.fly();
+	public void flyPlane(int speed,int height) {
+		plane.fly( speed, height);
 	}
 
 }

@@ -1,31 +1,30 @@
 package com.epam.lesson2.entity;
 
 public class Airliner extends Plane {
-	private int volumePassengerCompartment;
+
 	private int seatingCampacity;
 
 	public Airliner(String name, int fuelConsumption, int fligtRange,
-			int volumePassengerCompartment,int seatingCampacity ) {
-		super(name, fuelConsumption, fligtRange);
-	this.volumePassengerCompartment=volumePassengerCompartment;
-	this.seatingCampacity=seatingCampacity;
+			int volumePassengerCompartment, int seatingCampacity) {
+		super(name, fuelConsumption, fligtRange, seatingCampacity);
+
+		this.seatingCampacity = seatingCampacity;
 	}
-	public int getVolumePassengerCompartment(){
-		return volumePassengerCompartment;
+
+	public int getSeatingCampacity() {
+		return seatingCampacity;
 	}
-	public void setVolumePassengerCompartment(int volumePassengerCompartment){
-		this.volumePassengerCompartment=volumePassengerCompartment;
+
+	public void setseatingCampacity(int seatingCampacity) {
+		this.seatingCampacity = seatingCampacity;
 	}
-public int getSeatingCampacity(){
-	return seatingCampacity;
-}
-public void setseatingCampacity(int seatingCampacity){
-	this.seatingCampacity=seatingCampacity;
-}
+
 	@Override
-	public void fly() {
-		System.out.println("rrrrrrrrrrrrrrrrrrr");
-		
+	public void fly(int speed, int height) {
+
+		System.out.println("We are flying! \n" + "Our speed:  " + speed + "\n"
+				+ "Our height:  " + height + "\n");
+
 	}
 
 	@Override
@@ -46,6 +45,4 @@ public void setseatingCampacity(int seatingCampacity){
 		return 0;
 	}
 
-	
-	
 }

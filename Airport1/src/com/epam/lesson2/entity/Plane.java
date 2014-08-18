@@ -5,11 +5,14 @@ public abstract class Plane {
 	private String name;
 	private int fuelConsumption;
 	private int fligtRange;
+	private int stuffSeating;
 
-	public Plane(String name, int fuelConsumption, int fligtRange) {
+	public Plane(String name, int fuelConsumption, int fligtRange,
+			int stuffSeating) {
 		this.name = name;
 		this.fuelConsumption = fuelConsumption;
 		this.fligtRange = fligtRange;
+		this.stuffSeating=stuffSeating;
 
 	}
 
@@ -37,11 +40,20 @@ public abstract class Plane {
 		this.fligtRange = fligtRange;
 	}
 
-	public abstract void fly();
+	public int getStuffSeating() {
+		return fligtRange;
+	}
 
-	public abstract String toString();
+	public void setStuffSeating(int stuffSeating) {
+		this.stuffSeating = stuffSeating;
+	}
+	public abstract void fly(int speed,int height);
 
-	public abstract boolean equals(Object obj);
+	/*public  String toString();
 
-	public abstract int hashCode();
+	public  boolean equals(Object obj);
+
+	public  int hashCode();*/
+
+	
 }

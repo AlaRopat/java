@@ -10,10 +10,14 @@ public class NoteBookManager {
 	 * Добавить новый объект в список.
 	 * 
 	 * @param ArrayList<Note>
+	 *
 	 */
-	 public void addNote(Note n1,ArrayList <Note> notes){
-
-			notes.add(n1);
+	NoteBook nb;
+	 public ArrayList<Note> addNote(String mes,String date){
+		 Note n1=new Note(mes,date);
+       nb.getNotes().add(n1);
+       ArrayList<Note> list=nb.getNotes();
+			return list;
 		}
 	 /**
 	  * Удалить объект из списка.

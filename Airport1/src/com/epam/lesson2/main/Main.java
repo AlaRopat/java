@@ -8,9 +8,9 @@ public class Main {
 public static void main(String[] args){
 	Context context = new Context();
 	context.setPlane(new Airliner("ah-47", 56, 78, 56, 14));
-	context.flyPlane();
+	context.flyPlane(56,74);
 	context.setPlane(new Freighter("ah-47", 56, 78, 56, 14));
-	context.flyPlane();
+	context.flyPlane(87,45);
 	
 }
 }
