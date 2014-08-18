@@ -5,8 +5,8 @@ public class Airliner extends Plane {
 	private int seatingCampacity;
 
 	public Airliner(String name, int fuelConsumption, int fligtRange,
-			int volumePassengerCompartment, int seatingCampacity) {
-		super(name, fuelConsumption, fligtRange, seatingCampacity);
+			int stuffSeating, int seatingCampacity) {
+		super(name, fuelConsumption, fligtRange, stuffSeating);
 
 		this.seatingCampacity = seatingCampacity;
 	}

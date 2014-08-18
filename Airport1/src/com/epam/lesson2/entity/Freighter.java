@@ -2,26 +2,28 @@ package com.epam.lesson2.entity;
 
 public class Freighter extends Plane {
 
-private int carryingCapacity;
+	private int carryingCapacity;
 
 	public Freighter(String name, int fuelConsumption, int fligtRange,
-			int volumeCargoCompartment,int carryingCapacity	) {
-		super(name, fuelConsumption, fligtRange, carryingCapacity);
-		this.carryingCapacity=carryingCapacity;
-	
+			int stuffSeating) {
+		super(name, fuelConsumption, fligtRange, stuffSeating);
+		this.carryingCapacity = carryingCapacity;
+
 	}
 
-public int getCarryingCapacity(){
-	return carryingCapacity;
-}
-public void setCarryingCapacity(int carryingCapacity){
-	this.carryingCapacity=carryingCapacity;
-}
+	public int getCarryingCapacity() {
+		return carryingCapacity;
+	}
+
+	public void setCarryingCapacity(int carryingCapacity) {
+		this.carryingCapacity = carryingCapacity;
+	}
+
 	@Override
 	public void fly(int speed, int height) {
 
-		System.out.println( "Our speed:  " + speed + "\n"
-				+ "Our height:  " + height + "\n");
+		System.out.println("Our speed:  " + speed + "\n" + "Our height:  "
+				+ height + "\n");
 
 	}
 
