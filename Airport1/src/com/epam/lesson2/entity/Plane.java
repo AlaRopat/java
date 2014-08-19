@@ -47,7 +47,7 @@ public abstract class Plane {
 	public void setStuffSeating(int stuffSeating) {
 		this.stuffSeating = stuffSeating;
 	}
-	public abstract void fly(int speed,int height);
+
 
 	/*public  String toString();
 
