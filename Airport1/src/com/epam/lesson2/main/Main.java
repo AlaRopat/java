@@ -9,7 +9,7 @@ import com.epam.lesson2.entity.PlaneType;
 public class Main {
 	public static void main(String[] args) {
 		Plane plane;
-		plane=PlaneFactory.buildPlane(PlaneType.AH_124);
+		plane = PlaneFactory.buildPlane(PlaneType.BOEING_767_200);
 		System.out.println(plane.toString());
 	}
 }

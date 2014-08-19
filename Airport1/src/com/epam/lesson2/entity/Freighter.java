@@ -4,9 +4,9 @@ public class Freighter extends Plane {
 
 	private int carryingCapacity;
 
-	public Freighter(String name, int fuel, int range,
-			int stuffSeating,int carryingCapacity) {
-		super(name, fuel, range, stuffSeating);
+	public Freighter(String name, int fuel, int range, int staffSeating,
+			int carryingCapacity) {
+		super(name, fuel, range, staffSeating);
 		this.carryingCapacity = carryingCapacity;
 
 	}
@@ -19,12 +19,11 @@ public class Freighter extends Plane {
 		this.carryingCapacity = carryingCapacity;
 	}
 
-
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("carryingCapacity").append(carryingCapacity);
-		return super.toString()+sb.toString();
+		sb.append("Carrying capacity:  ").append(carryingCapacity);
+		return super.toString() + sb.toString();
 	}
 
 	@Override

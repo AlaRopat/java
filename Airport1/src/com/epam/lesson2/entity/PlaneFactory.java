@@ -6,27 +6,27 @@ public static Plane buildPlane(PlaneType  type ){
 	switch(type){
 	case BOEING_747_200:
 		plane=new Airliner(type.getName(),type.getFuel(),type.getRange(),
-				type.getStuffSeating(),type.getSeatingCampacity());
+				type.getStaffSeating(),type.getSeatingCapacity());
 		break;
-	case BOEING_767_200:
+		case BOEING_767_200:
 		plane=new Airliner(type.getName(),type.getFuel(),type.getRange(),
-				type.getStuffSeating(),type.getSeatingCampacity());
+				type.getStaffSeating(),type.getSeatingCapacity());
 		break;
 	case T”_154_¡:
 		plane=new Airliner(type.getName(),type.getFuel(),type.getRange(),
-				type.getStuffSeating(),type.getSeatingCampacity());
+				type.getStaffSeating(),type.getSeatingCapacity());
 		break;
 	case AIRBUS_A_310:
 		plane=new Airliner(type.getName(),type.getFuel(),type.getRange(),
-				type.getStuffSeating(),type.getSeatingCampacity());
+				type.getStaffSeating(),type.getSeatingCapacity());
 		break;
 	case ¿Õ_225:
 		plane=new Freighter(type.getName(),type.getFuel(),type.getRange(),
-			type.getStuffSeating(),type.getCarryingCapacity());
+			type.getStaffSeating(),type.getCarryingCapacity());
 		break;
 	case	AH_124:
 		plane=new Freighter(type.getName(),type.getFuel(),type.getRange(),
-				type.getStuffSeating(),type.getCarryingCapacity());
+				type.getStaffSeating(),type.getCarryingCapacity());
 			break;
 	}
 	return plane;

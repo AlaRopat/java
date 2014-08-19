@@ -3,26 +3,26 @@ package com.epam.lesson2.entity;
 public enum PlaneType {
 
 	BOEING_747_200("Boeing_747_200", 14500, 9800, 3, 452, 0),
-	BOEING_767_200("Boeing_767_200", 4800, 9400, 3, 255, 0),
+	BOEING_767_200(	"Boeing_767_200", 4800, 9400, 3, 255, 0),
 	T”_154_¡("“”-154¡", 6200,2800, 4, 180, 0),
 	AIRBUS_A_310("Airbus A310", 4400, 9170, 4, 280, 0),
-	¿Õ_225("AH-225", 15920, 5000, 7, 0, 640000),
+	¿Õ_225(	"AH-225", 15920, 5000, 7, 0, 640000), 
 	AH_124("AH-124", 12600, 7500,8, 0, 120000);
 
 	private String name;
 	private int fuel;
 	private int range;
-	private int stuffSeating;
-	private int seatingCampacity;
+	private int staffSeating;
+	private int seatingCapacity;
 	private int carryingCapacity;
 
-	PlaneType(String name, int fuel, int range,
-			int stuffSeating, int seatingCampacity, int carryingCapacity) {
+	PlaneType(String name, int fuel, int range, int staffSeating,
+			int seatingCapacity, int carryingCapacity) {
 		this.name = name;
 		this.fuel = fuel;
 		this.range = range;
-		this.stuffSeating = stuffSeating;
-		this.seatingCampacity = seatingCampacity;
+		this.staffSeating = staffSeating;
+		this.seatingCapacity = seatingCapacity;
 		this.carryingCapacity = carryingCapacity;
 	}
 
@@ -50,20 +50,20 @@ public enum PlaneType {
 		this.range = range;
 	}
 
-	public int getStuffSeating() {
-		return stuffSeating;
+	public int getStaffSeating() {
+		return staffSeating;
 	}
 
-	public void setStuffSeating(int stuffSeating) {
-		this.stuffSeating = stuffSeating;
+	public void setStaffSeating(int staffSeating) {
+		this.staffSeating = staffSeating;
 	}
 
-	public int getSeatingCampacity() {
-		return seatingCampacity;
+	public int getSeatingCapacity() {
+		return seatingCapacity;
 	}
 
-	public void setseatingCampacity(int seatingCampacity) {
-		this.seatingCampacity = seatingCampacity;
+	public void setseatingCapacity(int seatingCampacity) {
+		this.seatingCapacity = seatingCampacity;
 	}
 
 	public int getCarryingCapacity() {
@@ -73,4 +73,4 @@ public enum PlaneType {
 	public void setCarryingCapacity(int carryingCapacity) {
 		this.carryingCapacity = carryingCapacity;
 	}
-	}
+}

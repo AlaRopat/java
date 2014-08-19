@@ -2,28 +2,28 @@ package com.epam.lesson2.entity;
 
 public class Airliner extends Plane {
 
-	private int seatingCampacity;
+	private int seatingCapacity;
 
-	public Airliner(String name, int fuel, int range,
-			int stuffSeating, int seatingCampacity) {
-		super(name, fuel, range, stuffSeating);
+	public Airliner(String name, int fuel, int range, int staffSeating,
+			int seatingCapacity) {
+		super(name, fuel, range, staffSeating);
 
-		this.seatingCampacity = seatingCampacity;
+		this.seatingCapacity = seatingCapacity;
 	}
 
-	public int getSeatingCampacity() {
-		return seatingCampacity;
+	public int getSeatingCapacity() {
+		return seatingCapacity;
 	}
 
-	public void setseatingCampacity(int seatingCampacity) {
-		this.seatingCampacity = seatingCampacity;
+	public void setseatingCapacity(int seatingCapacity) {
+		this.seatingCapacity = seatingCapacity;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("seatingCampacity:").append(seatingCampacity);
-		return super.toString()+sb.toString();
+		sb.append("Seating capacity:  ").append(seatingCapacity);
+		return super.toString() + sb.toString();
 	}
 
 	@Override

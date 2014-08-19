@@ -5,13 +5,13 @@ public abstract class Plane {
 	private String name;
 	private int fuel;
 	private int range;
-	private int stuffSeating;
+	private int staffSeating;
 
-	Plane(String name, int fuel, int range, int stuffSeating) {
+	Plane(String name, int fuel, int range, int staffSeating) {
 		this.name = name;
 		this.fuel = fuel;
 		this.range = range;
-		this.stuffSeating = stuffSeating;
+		this.staffSeating = staffSeating;
 
 	}
 
@@ -41,21 +41,22 @@ public abstract class Plane {
 		this.range = range;
 	}
 
-	public int getStuffSeating() {
-		return stuffSeating;
+	public int getStaffSeating() {
+		return staffSeating;
 	}
 
-	public void setStuffSeating(int stuffSeating) {
-		this.stuffSeating = stuffSeating;
+	public void setStaffSeating(int staffSeating) {
+		this.staffSeating = staffSeating;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Name: ").append(name).append("\n")
-				.append("Consuption of fuel: ").append(fuel).append("\n")
-				.append("Range of flight").append(range).append("\n")
-				.append("stuffSeating").append(stuffSeating).append("\n");
+				.append("Fuel consuption: ").append(fuel).append("\n")
+				.append("Range flying:  ").append(range).append("\n")
+				.append("Seating for staff: ").append(staffSeating)
+				.append("\n");
 		return sb.toString();
 	};
 	/*
