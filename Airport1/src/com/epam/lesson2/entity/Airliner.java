@@ -21,8 +21,8 @@ public class Airliner extends Plane {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return super.toString() + "seatingCampacity:  "+seatingCampacity;
 	}
 
 	@Override

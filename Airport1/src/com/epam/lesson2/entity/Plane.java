@@ -42,16 +42,20 @@ public abstract class Plane {
 	}
 
 	public int getStuffSeating() {
-		return fligtRange;
+		return stuffSeating;
 	}
 
 	public void setStuffSeating(int stuffSeating) {
 		this.stuffSeating = stuffSeating;
 	}
 
+	public String toString() {
+		return "name:  " + name + "\n" + "fuelConsumption:  " + fuelConsumption
+				+ "\n" + "fligtRange:  " + fligtRange + "\n"
+				+ "stuffSeating:  " + stuffSeating + "\n";
+
+	};
 	/*
-	 * public String toString();
-	 * 
 	 * public boolean equals(Object obj);
 	 * 
 	 * public int hashCode();

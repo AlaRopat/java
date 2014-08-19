@@ -5,7 +5,7 @@ public class Freighter extends Plane {
 	private int carryingCapacity;
 
 	public Freighter(String name, int fuelConsumption, int fligtRange,
-			int stuffSeating) {
+			int stuffSeating,int carryingCapacity) {
 		super(name, fuelConsumption, fligtRange, stuffSeating);
 		this.carryingCapacity = carryingCapacity;
 
@@ -22,8 +22,8 @@ public class Freighter extends Plane {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+	
+		return super.toString()+ "carryingCapacity:  "+carryingCapacity;
 	}
 
 	@Override
