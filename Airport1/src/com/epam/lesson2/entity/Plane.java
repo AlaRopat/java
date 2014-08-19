@@ -3,14 +3,14 @@ package com.epam.lesson2.entity;
 public abstract class Plane {
 
 	private String name;
-	private int fuelConsumption;
-	private int fligtRange;
+	private int fuel;
+	private int range;
 	private int stuffSeating;
 
-	Plane(String name, int fuelConsumption, int fligtRange, int stuffSeating) {
+	Plane(String name, int fuel, int range, int stuffSeating) {
 		this.name = name;
-		this.fuelConsumption = fuelConsumption;
-		this.fligtRange = fligtRange;
+		this.fuel = fuel;
+		this.range = range;
 		this.stuffSeating = stuffSeating;
 
 	}
@@ -23,22 +23,22 @@ public abstract class Plane {
 		this.name = name;
 	}
 
-	public int getFuelConsumption() {
-		return fuelConsumption;
+	public int getFuel() {
+		return fuel;
 	}
 
-	public void setFuelConsumption(int fuelConsumption) {
+	public void setFuel(int fuel) {
 
-		this.fuelConsumption = fuelConsumption;
+		this.fuel = fuel;
 
 	}
 
-	public int getFligtRange() {
-		return fligtRange;
+	public int getRange() {
+		return range;
 	}
 
-	public void setFligtRange(int fligtRange) {
-		this.fligtRange = fligtRange;
+	public void setRange(int range) {
+		this.range = range;
 	}
 
 	public int getStuffSeating() {
@@ -49,11 +49,14 @@ public abstract class Plane {
 		this.stuffSeating = stuffSeating;
 	}
 
+	@Override
 	public String toString() {
-		return "name:  " + name + "\n" + "fuelConsumption:  " + fuelConsumption
-				+ "\n" + "fligtRange:  " + fligtRange + "\n"
-				+ "stuffSeating:  " + stuffSeating + "\n";
-
+		StringBuilder sb = new StringBuilder();
+		sb.append("Name: ").append(name).append("\n")
+				.append("Consuption of fuel: ").append(fuel).append("\n")
+				.append("Range of flight").append(range).append("\n")
+				.append("stuffSeating").append(stuffSeating).append("\n");
+		return sb.toString();
 	};
 	/*
 	 * public boolean equals(Object obj);

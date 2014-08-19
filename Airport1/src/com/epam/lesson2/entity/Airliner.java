@@ -4,9 +4,9 @@ public class Airliner extends Plane {
 
 	private int seatingCampacity;
 
-	public Airliner(String name, int fuelConsumption, int fligtRange,
+	public Airliner(String name, int fuel, int range,
 			int stuffSeating, int seatingCampacity) {
-		super(name, fuelConsumption, fligtRange, stuffSeating);
+		super(name, fuel, range, stuffSeating);
 
 		this.seatingCampacity = seatingCampacity;
 	}
@@ -21,8 +21,9 @@ public class Airliner extends Plane {
 
 	@Override
 	public String toString() {
-		
-		return super.toString() + "seatingCampacity:  "+seatingCampacity;
+		StringBuilder sb = new StringBuilder();
+		sb.append("seatingCampacity:").append(seatingCampacity);
+		return super.toString()+sb.toString();
 	}
 
 	@Override
