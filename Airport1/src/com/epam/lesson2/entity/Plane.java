@@ -7,12 +7,11 @@ public abstract class Plane {
 	private int fligtRange;
 	private int stuffSeating;
 
-	public Plane(String name, int fuelConsumption, int fligtRange,
-			int stuffSeating) {
+	Plane(String name, int fuelConsumption, int fligtRange, int stuffSeating) {
 		this.name = name;
 		this.fuelConsumption = fuelConsumption;
 		this.fligtRange = fligtRange;
-		this.stuffSeating=stuffSeating;
+		this.stuffSeating = stuffSeating;
 
 	}
 
@@ -29,7 +28,9 @@ public abstract class Plane {
 	}
 
 	public void setFuelConsumption(int fuelConsumption) {
+
 		this.fuelConsumption = fuelConsumption;
+
 	}
 
 	public int getFligtRange() {
@@ -48,12 +49,12 @@ public abstract class Plane {
 		this.stuffSeating = stuffSeating;
 	}
 
+	/*
+	 * public String toString();
+	 * 
+	 * public boolean equals(Object obj);
+	 * 
+	 * public int hashCode();
+	 */
 
-	/*public  String toString();
-
-	public  boolean equals(Object obj);
-
-	public  int hashCode();*/
-
-	
 }
