@@ -19,13 +19,6 @@ public class Freighter extends Plane {
 		this.carryingCapacity = carryingCapacity;
 	}
 
-	@Override
-	public void fly(int speed, int height) {
-
-		System.out.println("Our speed:  " + speed + "\n" + "Our height:  "
-				+ height + "\n");
-
-	}
 
 	@Override
 	public String toString() {

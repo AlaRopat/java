@@ -20,14 +20,6 @@ public class Airliner extends Plane {
 	}
 
 	@Override
-	public void fly(int speed, int height) {
-
-		System.out.println("We are flying! \n" + "Our speed:  " + speed + "\n"
-				+ "Our height:  " + height + "\n");
-
-	}
-
-	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return null;
