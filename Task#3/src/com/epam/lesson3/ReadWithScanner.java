@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ReadWithScanner {
 	private String filePath;
-	Text t=new Text();
+
 
 	public ReadWithScanner(String fileName) {
 		this.filePath = fileName;
