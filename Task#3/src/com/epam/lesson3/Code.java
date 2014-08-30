@@ -1,5 +1,5 @@
 package com.epam.lesson3;
 
-public class Code {
+public class Code extends TextElements{
 
 }
