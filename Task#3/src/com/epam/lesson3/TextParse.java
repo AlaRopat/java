@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ReadWithScanner {
+public class TextParse {
 	private String filePath;
 
 
-	public ReadWithScanner(String fileName) {
+	public TextParse(String fileName) {
 		this.filePath = fileName;
 	}
 

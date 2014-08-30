@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Main {
 public static void main(String[]args) {
-	ReadWithScanner f=new ReadWithScanner("D://workjava/task2_text.txt");
+	TextParse f=new TextParse("D://workjava/task2_text.txt");
 	
 	f.processByLine();
 	

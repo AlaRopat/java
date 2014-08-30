@@ -9,7 +9,7 @@ public abstract class TextElement {
 
 	public abstract TextElement getElement(int index);
 
-	public abstract void parse();
+//	public abstract void parse();
 
 	public abstract Iterator<TextElement> getIterator();
 }
