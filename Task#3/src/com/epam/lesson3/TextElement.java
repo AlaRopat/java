@@ -15,9 +15,10 @@ public abstract class TextElement {
 		throw new UnsupportedOperationException();
 	};
 
-	// public abstract void parse();
-
 	public Iterator<TextElement> getIterator() {
 		throw new UnsupportedOperationException();
 	};
+//	public void print(TextElement te){
+//		throw new UnsupportedOperationException();
+//	}
 }
