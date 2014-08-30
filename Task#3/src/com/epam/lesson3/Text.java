@@ -5,6 +5,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class Text {
+public class Text extends TextElements{
 	
 }
