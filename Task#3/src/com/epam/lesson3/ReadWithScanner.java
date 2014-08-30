@@ -14,17 +14,17 @@ public class ReadWithScanner {
 		this.filePath = fileName;
 	}
 
-	public List<String> processByLine() {
+	public void processByLine() {
 		try {
 			FileReader fr = new FileReader(filePath);
 			Scanner scanner = new Scanner(fr);
 			while (scanner.hasNextLine()) {
-				t.setText(scanner.nextLine());
+				System.out.println(scanner.nextLine());
 			}
 		} catch (FileNotFoundException e) {
 			System.err.println(e);
 		}
-		return t.getText();
+	
 
 	}
 }
