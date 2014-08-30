@@ -1,6 +1,6 @@
 package com.epam.lesson3;
 
-public class TextItem {
+public class TextItem extends TextElement {
 	private String content = new String();
 
 	public TextItem(String content) {

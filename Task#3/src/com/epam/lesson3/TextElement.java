@@ -3,13 +3,21 @@ package com.epam.lesson3;
 import java.util.Iterator;
 
 public abstract class TextElement {
-	public abstract void addElement();
+	public void addElement(TextElement te) {
+		throw new UnsupportedOperationException();
+	};
 
-	public abstract void removeElement();
+	public void removeElement(TextElement te) {
+		throw new UnsupportedOperationException();
+	};
 
-	public abstract TextElement getElement(int index);
+	public TextElement getElement(int index) {
+		throw new UnsupportedOperationException();
+	};
 
-//	public abstract void parse();
+	// public abstract void parse();
 
-	public abstract Iterator<TextElement> getIterator();
+	public Iterator<TextElement> getIterator() {
+		throw new UnsupportedOperationException();
+	};
 }
