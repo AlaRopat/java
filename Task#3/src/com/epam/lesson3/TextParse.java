@@ -11,7 +11,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TextParse {
-	public static final String REGEX_BLOCK_OF_TEXT = "([\\n \\t][\\d|A-Z|].+)";
+	public static final String REGEX_BLOCK_OF_TEXT = "";
+	public static final String REGEX_BLOCK_OF_CODE = "\n(class|void)(.+[^}]\\s)+([}[\n]])+";
 
 	public TextParse() {
 
@@ -35,19 +36,18 @@ public class TextParse {
 	}
 
 	public TextElement parseToText(String text) {
-		TextElement blockOfText;
-		TextElement textList = new Text();
-		Pattern rt = Pattern.compile(REGEX_BLOCK_OF_TEXT);
-		String txt = new String();
+
+		Text codeList = new Text();
+		Pattern rt = Pattern.compile(REGEX_BLOCK_OF_CODE);
+		String code = new String();
 		Matcher matcher = rt.matcher(text);
-		while (matcher.find()) {
-			txt = matcher.group();
-			System.out.println(txt);
-			blockOfText = new TextItem(txt);
-			textList.addElement(blockOfText);
+		while(matcher.find()) {
+			code = matcher.group();
+			System.out.println(code);
+			codeList.addElement(new TextItem(code));
 		}
 
-		return textList;
+		return codeList;
 
 	}
 }
