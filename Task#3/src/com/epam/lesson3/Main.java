@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.epam.lesson3.entity.Text;
 import com.epam.lesson3.entity.TextElement;
 import com.epam.lesson3.logic.parse.TextParse;
 
@@ -13,8 +14,9 @@ public class Main {
 		TextParse f = new TextParse();
 
 		String text = f.readFile("D://лекции/task2_text.txt");
-		TextElement tr = f.parseToText(text);
-		
+		Text wholeText=new Text();
+		TextElement tr = f.parseToText(wholeText,text);
+		tr.print();
 
 	}
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Text extends TextElement {
 	private ArrayList<TextElement> textElements = new ArrayList<TextElement>();
-
+	Iterator iterator=null;
 	public List<TextElement> getTextElements() {
 		return Collections.unmodifiableList(textElements);
 
@@ -29,16 +29,19 @@ public class Text extends TextElement {
 
 		return (TextElement) textElements.get(index);
 	}
-
-	@Override
-	public Iterator<TextElement> getIterator() {
-
-		return textElements.iterator();
+	public void print(){
+		iterator=textElements.iterator();
+		while(iterator.hasNext()){
+			TextElement te=(TextElement)iterator.next();
+			te.print();
+		}
 	}
-	/*
-	 * public void print(TextElement te){
-	 * 
-	 * }
-	 */
+
+	/*public Iterator createrIterator(){
+		if(iterator==null){
+			iterator=new TextIterator(textElements.iterator());
+		}
+		return iterator;
+	}*/
 
 }
