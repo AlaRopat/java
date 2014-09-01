@@ -1,5 +1,6 @@
-package com.epam.lesson3;
+package com.epam.lesson3.logic.parse;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,9 +11,13 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.epam.lesson3.entity.Text;
+import com.epam.lesson3.entity.TextElement;
+import com.epam.lesson3.entity.TextItem;
+
 public class TextParse {
 	public static final String REGEX_BLOCK_OF_TEXT = "";
-	public static final String REGEX_BLOCK_OF_CODE = "\n(class|void)(.+[^}]\\s)+([}[\n]])+";
+	public static final String REGEX_BLOCK_OF_CODE = "(\n(class|void)(.+[^}]\\s)+(}\n)+)";
 
 	public TextParse() {
 
@@ -21,16 +26,18 @@ public class TextParse {
 	public String readFile(String filePath) {
 		String text = new String();
 		try {
-			FileInputStream inFile = new FileInputStream(filePath);
-			byte[] str = new byte[inFile.available()];
-			inFile.read(str);
-			text = new String(str);
+			FileReader fr=new FileReader(filePath);
+			Scanner scan=new Scanner(fr);
+			while(scan.hasNextLine()){
+				text+=scan.nextLine();
+				text+="\n";}
 
+			
 		} catch (FileNotFoundException e) {
 			System.err.println(e);
-		} catch (IOException e) {
-			System.err.println(e);
-		}
+		} 
+		
+		
 		return text;
 
 	}
@@ -41,8 +48,8 @@ public class TextParse {
 		Pattern rt = Pattern.compile(REGEX_BLOCK_OF_CODE);
 		String code = new String();
 		Matcher matcher = rt.matcher(text);
-		while(matcher.find()) {
-			code = matcher.group();
+		while (matcher.find()) {
+			code =matcher.group();
 			System.out.println(code);
 			codeList.addElement(new TextItem(code));
 		}

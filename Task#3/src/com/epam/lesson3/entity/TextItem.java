@@ -1,4 +1,5 @@
-package com.epam.lesson3;
+package com.epam.lesson3.entity;
+
 
 public class TextItem extends TextElement {
 	private String content = new String();

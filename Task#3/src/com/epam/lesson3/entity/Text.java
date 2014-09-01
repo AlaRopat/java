@@ -1,4 +1,4 @@
-package com.epam.lesson3;
+package com.epam.lesson3.entity;
 
 import java.util.ArrayList;
 import java.util.Collections;
