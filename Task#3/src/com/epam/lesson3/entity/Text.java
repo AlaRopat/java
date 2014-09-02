@@ -8,8 +8,22 @@ import java.util.List;
 import com.epam.lesson3.logic.iterator.TextIterator;
 
 public class Text extends TextElement {
-	private ArrayList<TextElement> textElements = new ArrayList<TextElement>();
-	Iterator iterator=null;
+	private  ArrayList<TextElement> textElements = new ArrayList<TextElement>();
+	Iterator iterator = null;
+	private int index;
+
+	public Text() {
+
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
 	public List<TextElement> getTextElements() {
 		return Collections.unmodifiableList(textElements);
 
@@ -20,8 +34,7 @@ public class Text extends TextElement {
 		textElements.add(te);
 	}
 
-	@Override
-	public void removeElement(TextElement te) {
+	public  void removeElement(TextElement te) {
 		textElements.remove(te);
 
 	}
@@ -31,17 +44,18 @@ public class Text extends TextElement {
 
 		return (TextElement) textElements.get(index);
 	}
-	public void print(){
-		iterator=textElements.iterator();
-		while(iterator.hasNext()){
-			TextElement te=(TextElement)iterator.next();
+
+	public void print() {
+		iterator = textElements.iterator();
+		while (iterator.hasNext()) {
+			TextElement te = (TextElement) iterator.next();
 			te.print();
 		}
 	}
 
-	public Iterator createrIterator(){
-		if(iterator==null){
-			iterator=new TextIterator(textElements.iterator());
+	public Iterator createrIterator() {
+		if (iterator == null) {
+			iterator = new TextIterator(textElements.iterator());
 		}
 		return iterator;
 	}

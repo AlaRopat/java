@@ -42,7 +42,7 @@ public class TextParse {
 	public Text parseToText(Text wholeText, String text) {
 
 		Text textList = new Text();
-	
+
 		Pattern rt = Pattern.compile(REGEX_BLOCK_OF_CODE);
 		String paragraph = new String();
 		String code = new String();
@@ -52,14 +52,13 @@ public class TextParse {
 		for (int i = 0; i < te.length; i++) {
 			paragraph = te[i];
 			textList.addElement(parseToSentence(paragraph));
+			textList.setIndex(TextElement.TEXT);
 			wholeText.addElement(textList.getElement(i));
 			if (matcher.find()) {
 				code = matcher.group();
 				wholeText.addElement(new TextItem(code, TextElement.CODE));
 			}
 		}
-
-		
 
 		return wholeText;
 
@@ -74,7 +73,7 @@ public class TextParse {
 			sentence = matcher.group();
 
 			sentenceList.addElement(parseToWord(sentence));
-
+			sentenceList.setIndex(TextElement.SENTENCE);
 		}
 
 		return sentenceList;
@@ -85,27 +84,28 @@ public class TextParse {
 		Text wordSignList = new Text();
 		Pattern rt = Pattern.compile(REGEX_WORD_AND_SIGN);
 		Matcher matcher = rt.matcher(sentence);
-		
+
 		String word = new String();
 		String sign = new String();
 		String space = new String();
 		String number = new String();
 		while (matcher.find()) {
 			if ((word = matcher.group(1)) != null) {
-				
+
 				wordSignList.addElement(new TextItem(word, TextElement.WORD));
 			}
 			if ((space = matcher.group(2)) != null) {
 
 				wordSignList.addElement(new TextItem(space, TextElement.SPACE));
 			}
-			if((sign = matcher.group(3))!=null){
-			
-			wordSignList.addElement(new TextItem(sign, TextElement.SIGN));
+			if ((sign = matcher.group(3)) != null) {
+
+				wordSignList.addElement(new TextItem(sign, TextElement.SIGN));
 			}
-			if((number = matcher.group(4))!=null){
-			
-			wordSignList.addElement(new TextItem(number, TextElement.NUMBER));
+			if ((number = matcher.group(4)) != null) {
+
+				wordSignList
+						.addElement(new TextItem(number, TextElement.NUMBER));
 			}
 
 		}

@@ -8,15 +8,16 @@ import java.util.List;
 import com.epam.lesson3.entity.Text;
 import com.epam.lesson3.entity.TextElement;
 import com.epam.lesson3.logic.parse.TextParse;
+import com.epam.lesson3.manager.TextManipulation;
 
 public class Main {
 	public static void main(String[] args) {
 		TextParse f = new TextParse();
 
 		String text = f.readFile("task2_text.txt");
-		Text wholeText=new Text();
-		TextElement tr = f.parseToText(wholeText,text);
-		tr.print();
-
+		Text wholeText = new Text();
+		TextElement tr = f.parseToText(wholeText, text);
+		String txt = TextManipulation.buildText(wholeText);
+	System.out.println(txt);
 	}
 }
