@@ -51,10 +51,11 @@ public class TextParse {
 		
 		for (int i = 0; i < te.length; i++) {
 			paragraph = te[i];
-			textList.addElement(new TextItem(paragraph, TextElement.TEXT));
+			textList.addElement(parseToSentence(paragraph));
+			wholeText.addElement(textList.getElement(i));
 			if(matcher.find()){
 			code=matcher.group();
-			codeList.addElement(new TextItem(code,TextElement.CODE));
+			wholeText.addElement(new TextItem(code,TextElement.CODE));
 		}
 		}
 		
@@ -64,14 +65,12 @@ public class TextParse {
 		 * for(int i=0;i<textList.size();i++){
 		 * System.out.println(textList.get(i)); }
 		 */
-wholeText.addElement(textList);
-wholeText.addElement(codeList);
-textList = parseToSentence(textList, paragraph);
+
 		return wholeText;
 
 	}
 
-	private Text parseToSentence(Text textList, String paragraph) {
+	private Text parseToSentence( String paragraph) {
 		Text sentenceList = new Text();
 		Pattern rt = Pattern.compile(REGEX_SENTENCE);
 		Matcher matcher = rt.matcher(paragraph);
@@ -84,11 +83,11 @@ textList = parseToSentence(textList, paragraph);
 			sentenceList
 					.addElement(new TextItem(sentence, TextElement.SENTENCE));
 
-			textList.addElement(sentenceList);
+		
 		
 		}
-	sentenceList = parseToWord(sentenceList, sentence);
-		return textList;
+//	sentenceList = parseToWord(sentenceList, sentence);
+		return sentenceList;
 
 	}
 
