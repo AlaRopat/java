@@ -1,6 +1,7 @@
 package com.epam.lesson3;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -11,7 +12,7 @@ import com.epam.lesson3.logic.parse.TextParse;
 import com.epam.lesson3.manager.TextManipulation;
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		TextParse f = new TextParse();
 
 		String text = f.readFile("task2_text.txt");

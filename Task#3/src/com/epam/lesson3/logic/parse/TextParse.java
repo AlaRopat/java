@@ -1,9 +1,13 @@
 package com.epam.lesson3.logic.parse;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,8 +19,9 @@ import com.epam.lesson3.entity.TextItem;
 public class TextParse {
 	public static final String REGEX_BLOCK_OF_CODE = "(\n(class|void)(.+[^}]\\s)+(}\n)+)";
 	public static final String REGEX_SENTENCE = "([^\\.\\?!:;]*)([\\.\\?!:;])([\\s\n]*)";
-	public static final String REGEX_WORD_AND_SIGN = "([A-Za-z\\'\\-]+)|(\\s)|([\\p{Punct}^\\'^\\-])|([\\d]+)";
-
+public static final String REGEX_WORD_AND_SIGN = "([A-Za-z\\'\\-]+)|(\\s)|([\\p{Punct}^\\'^\\-])|([\\d]+)";
+	 Properties props = new Properties();
+  
 	public TextParse() {
 
 	}
