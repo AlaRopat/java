@@ -13,7 +13,7 @@ public class Main {
 	public static void main(String[] args) {
 		TextParse f = new TextParse();
 
-		String text = f.readFile("D://лекции/task2_text.txt");
+		String text = f.readFile("task2_text.txt");
 		Text wholeText=new Text();
 		TextElement tr = f.parseToText(wholeText,text);
 		tr.print();

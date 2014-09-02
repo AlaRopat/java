@@ -42,93 +42,75 @@ public class TextParse {
 	public Text parseToText(Text wholeText, String text) {
 
 		Text textList = new Text();
-		Text codeList = new Text();
+	
 		Pattern rt = Pattern.compile(REGEX_BLOCK_OF_CODE);
 		String paragraph = new String();
-		String code=new String();
+		String code = new String();
 		String[] te = rt.split(text);
 		Matcher matcher = rt.matcher(text);
-		
+
 		for (int i = 0; i < te.length; i++) {
 			paragraph = te[i];
 			textList.addElement(parseToSentence(paragraph));
 			wholeText.addElement(textList.getElement(i));
-			if(matcher.find()){
-			code=matcher.group();
-			wholeText.addElement(new TextItem(code,TextElement.CODE));
+			if (matcher.find()) {
+				code = matcher.group();
+				wholeText.addElement(new TextItem(code, TextElement.CODE));
+			}
 		}
-		}
+
 		
-		
-	
-		/*
-		 * for(int i=0;i<textList.size();i++){
-		 * System.out.println(textList.get(i)); }
-		 */
 
 		return wholeText;
 
 	}
 
-	private Text parseToSentence( String paragraph) {
+	private Text parseToSentence(String paragraph) {
 		Text sentenceList = new Text();
 		Pattern rt = Pattern.compile(REGEX_SENTENCE);
 		Matcher matcher = rt.matcher(paragraph);
 		String sentence = new String();
 		while (matcher.find()) {
 			sentence = matcher.group();
-		
-		
-			
-			sentenceList
-					.addElement(new TextItem(sentence, TextElement.SENTENCE));
 
-		
-		
+			sentenceList.addElement(parseToWord(sentence));
+
 		}
-//	sentenceList = parseToWord(sentenceList, sentence);
+
 		return sentenceList;
 
 	}
 
-	@SuppressWarnings("static-access")
-	private Text parseToWord(Text sentenceList, String sentence) {
+	private Text parseToWord(String sentence) {
 		Text wordSignList = new Text();
 		Pattern rt = Pattern.compile(REGEX_WORD_AND_SIGN);
 		Matcher matcher = rt.matcher(sentence);
-		String wordSign = new String();
+		
 		String word = new String();
 		String sign = new String();
 		String space = new String();
 		String number = new String();
 		while (matcher.find()) {
-			wordSign = matcher.group();
-			if (rt.matches(REGEX_WORD_AND_SIGN, wordSign)) {
-				word = matcher.group(1);
+			if ((word = matcher.group(1)) != null) {
+				
 				wordSignList.addElement(new TextItem(word, TextElement.WORD));
 			}
-			if (rt.matches(REGEX_WORD_AND_SIGN, wordSign)) {
-				sign = matcher.group(3);
-				wordSignList.addElement(new TextItem(sign, TextElement.SIGN));
-			}
-			if (rt.matches(REGEX_WORD_AND_SIGN, wordSign)) {
-				space = matcher.group(2);
+			if ((space = matcher.group(2)) != null) {
+
 				wordSignList.addElement(new TextItem(space, TextElement.SPACE));
 			}
-			if (rt.matches(REGEX_WORD_AND_SIGN, wordSign)) {
-				number = matcher.group(4);
-				wordSignList.addElement(new TextItem(number, TextElement.NUMBER));
+			if((sign = matcher.group(3))!=null){
+			
+			wordSignList.addElement(new TextItem(sign, TextElement.SIGN));
 			}
-			sentenceList.addElement(wordSignList);
+			if((number = matcher.group(4))!=null){
+			
+			wordSignList.addElement(new TextItem(number, TextElement.NUMBER));
+			}
 
 		}
 
-		return sentenceList;
+		return wordSignList;
 	}
 
-	/*
-	 * private Text parseToPunctuation(Text wordList, String word) { Text
-	 * wordSignList = new Text(); Pattern rt = Pattern.compile(); Matcher
-	 * matcher = rt.matcher(word); String word=new String(); return null; }
-	 */
 }
