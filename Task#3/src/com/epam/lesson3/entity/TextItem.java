@@ -2,6 +2,8 @@ package com.epam.lesson3.entity;
 
 import java.util.Iterator;
 
+import com.epam.lesson3.logic.iterator.NullIterator;
+
 
 public class TextItem extends TextElement {
 	private String content = new String();
