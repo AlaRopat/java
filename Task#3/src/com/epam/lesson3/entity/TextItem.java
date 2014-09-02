@@ -1,5 +1,7 @@
 package com.epam.lesson3.entity;
 
+import java.util.Iterator;
+
 
 public class TextItem extends TextElement {
 	private String content = new String();
@@ -31,4 +33,9 @@ private int index=0;
 	System.out.println("\n"+getContent());
 	}
 	
+
+	@Override
+	public Iterator createrIterator() {
+		return new NullIterator();
+	}
 }

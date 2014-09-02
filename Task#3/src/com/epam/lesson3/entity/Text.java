@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import com.epam.lesson3.logic.iterator.TextIterator;
+
 public class Text extends TextElement {
 	private ArrayList<TextElement> textElements = new ArrayList<TextElement>();
 	Iterator iterator=null;
@@ -37,11 +39,11 @@ public class Text extends TextElement {
 		}
 	}
 
-	/*public Iterator createrIterator(){
+	public Iterator createrIterator(){
 		if(iterator==null){
 			iterator=new TextIterator(textElements.iterator());
 		}
 		return iterator;
-	}*/
+	}
 
 }

@@ -23,9 +23,9 @@ public abstract class TextElement {
 		throw new UnsupportedOperationException();
 	};
 
-	public Iterator createrIterator() {
-		throw new UnsupportedOperationException();
-	}
+	public abstract Iterator createrIterator();
+		
+	
 
 	public abstract void print();
 
