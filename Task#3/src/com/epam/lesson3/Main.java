@@ -9,7 +9,8 @@ import java.util.List;
 import com.epam.lesson3.entity.Text;
 import com.epam.lesson3.entity.TextElement;
 import com.epam.lesson3.logic.parse.TextParse;
-import com.epam.lesson3.manager.TextManipulation;
+import com.epam.lesson3.manager.TextManager;
+
 
 public class Main {
 	public static void main(String[] args)  {
@@ -18,7 +19,7 @@ public class Main {
 		String text = f.readFile("task2_text.txt");
 		Text wholeText = new Text();
 		TextElement tr = f.parseToText(wholeText, text);
-		String txt = TextManipulation.buildText(wholeText);
+		String txt = TextManager.buildText(wholeText);
 	System.out.println(txt);
 	}
 }

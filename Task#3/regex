@@ -1,3 +1,0 @@
- REGEX_BLOCK_OF_CODE = "(\n(class|void)(.+[^}]\\s)+(}\n)+)";
-	 String REGEX_SENTENCE = "([^\\.\\?!:;]*)([\\.\\?!:;])([\\s\n]*)";
-	 String REGEX_WORD_AND_SIGN = "([A-Za-z\\'\\-]+)|(\\s)|([\\p{Punct}^\\'^\\-])|([\\d]+)";
