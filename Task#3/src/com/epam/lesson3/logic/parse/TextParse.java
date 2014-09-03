@@ -15,15 +15,12 @@ import java.util.regex.Pattern;
 import com.epam.lesson3.entity.Text;
 import com.epam.lesson3.entity.TextElement;
 import com.epam.lesson3.entity.TextItem;
+import com.epam.lesson3.manager.TextManager;
 
 public class TextParse {
-	public static final String REGEX_BLOCK_OF_CODE = "(\n(class|void)(.+[^}]\\s)+(}\n)+)";
-	public static final String REGEX_SENTENCE = "([^\\.\\?!:;]*)([\\.\\?!:;])([\\s\n]*)";
-public static final String REGEX_WORD_AND_SIGN = "([A-Za-z\\'\\-]+)|(\\s)|([\\p{Punct}^\\'^\\-])|([\\d]+)";
-	 Properties props = new Properties();
-  
+	 
 	public TextParse() {
-
+		
 	}
 
 	public String readFile(String filePath) {
@@ -48,7 +45,7 @@ public static final String REGEX_WORD_AND_SIGN = "([A-Za-z\\'\\-]+)|(\\s)|([\\p{
 
 		Text textList = new Text();
 
-		Pattern rt = Pattern.compile(REGEX_BLOCK_OF_CODE);
+		Pattern rt = Pattern.compile(TextManager.getProperty().getProperty("regex.REGEX_BLOCK_OF_CODE"));
 		String paragraph = new String();
 		String code = new String();
 		String[] te = rt.split(text);
@@ -71,7 +68,7 @@ public static final String REGEX_WORD_AND_SIGN = "([A-Za-z\\'\\-]+)|(\\s)|([\\p{
 
 	private Text parseToSentence(String paragraph) {
 		Text sentenceList = new Text();
-		Pattern rt = Pattern.compile(REGEX_SENTENCE);
+		Pattern rt = Pattern.compile(TextManager.getProperty().getProperty("regex.REGEX_SENTENCE"));
 		Matcher matcher = rt.matcher(paragraph);
 		String sentence = new String();
 		while (matcher.find()) {
@@ -87,7 +84,7 @@ public static final String REGEX_WORD_AND_SIGN = "([A-Za-z\\'\\-]+)|(\\s)|([\\p{
 
 	private Text parseToWord(String sentence) {
 		Text wordSignList = new Text();
-		Pattern rt = Pattern.compile(REGEX_WORD_AND_SIGN);
+		Pattern rt = Pattern.compile(TextManager.getProperty().getProperty("regex.REGEX_WORD_AND_SIGN"));
 		Matcher matcher = rt.matcher(sentence);
 
 		String word = new String();

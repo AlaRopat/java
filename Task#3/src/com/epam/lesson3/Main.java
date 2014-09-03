@@ -19,6 +19,7 @@ public class Main {
 		String text = f.readFile("task2_text.txt");
 		Text wholeText = new Text();
 		TextElement tr = f.parseToText(wholeText, text);
+		
 		String txt = TextManager.buildText(wholeText);
 	System.out.println(txt);
 	}

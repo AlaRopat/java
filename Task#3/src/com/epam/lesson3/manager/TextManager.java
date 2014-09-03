@@ -1,6 +1,7 @@
 package com.epam.lesson3.manager;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Properties;
 import java.util.regex.Matcher;
@@ -27,11 +28,14 @@ public class TextManager {
 	}
 	public static Properties getProperty(){
 		FileInputStream fis;
-		Properties prop=new Properties();
+		Properties property=new Properties();
 		try{
-			fis=new FileInputStream("");
+			fis=new FileInputStream("src/.properties");
+			property.load(fis);
+		}catch(IOException e){
+			 System.out.println("File is not exist");
 		}
-		return null;
+		return property;
 		
 	}
 }
