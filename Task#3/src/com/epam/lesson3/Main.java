@@ -20,7 +20,8 @@ public class Main {
 		Text wholeText = new Text();
 		TextElement tr = f.parseToText(wholeText, text);
 		
-		String txt = TextManager.buildText(wholeText);
-	System.out.println(txt);
+//		String txt = TextManager.buildText(wholeText);
+//	System.out.println(txt);
+		TextManager.rText(wholeText);
 	}
 }

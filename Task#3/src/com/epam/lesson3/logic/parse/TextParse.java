@@ -18,34 +18,18 @@ import com.epam.lesson3.entity.TextItem;
 import com.epam.lesson3.manager.TextManager;
 
 public class TextParse {
-	 
+
 	public TextParse() {
-		
-	}
-
-	public String readFile(String filePath) {
-		String text = new String();
-		try {
-			FileReader fr = new FileReader(filePath);
-			Scanner scan = new Scanner(fr);
-			while (scan.hasNextLine()) {
-				text += scan.nextLine();
-				text += "\n";
-			}
-
-		} catch (FileNotFoundException e) {
-			System.err.println(e);
-		}
-
-		return text;
 
 	}
 
+	
 	public Text parseToText(Text wholeText, String text) {
 
 		Text textList = new Text();
 
-		Pattern rt = Pattern.compile(TextManager.getProperty().getProperty("regex.REGEX_BLOCK_OF_CODE"));
+		Pattern rt = Pattern.compile(TextManager.getProperty().getProperty(
+				"regex.REGEX_BLOCK_OF_CODE"));
 		String paragraph = new String();
 		String code = new String();
 		String[] te = rt.split(text);
@@ -54,7 +38,7 @@ public class TextParse {
 		for (int i = 0; i < te.length; i++) {
 			paragraph = te[i];
 			textList.addElement(parseToSentence(paragraph));
-			textList.setIndex(TextElement.TEXT);
+
 			wholeText.addElement(textList.getElement(i));
 			if (matcher.find()) {
 				code = matcher.group();
@@ -68,14 +52,15 @@ public class TextParse {
 
 	private Text parseToSentence(String paragraph) {
 		Text sentenceList = new Text();
-		Pattern rt = Pattern.compile(TextManager.getProperty().getProperty("regex.REGEX_SENTENCE"));
+		Pattern rt = Pattern.compile(TextManager.getProperty().getProperty(
+				"regex.REGEX_SENTENCE"));
 		Matcher matcher = rt.matcher(paragraph);
 		String sentence = new String();
 		while (matcher.find()) {
 			sentence = matcher.group();
 
 			sentenceList.addElement(parseToWord(sentence));
-			sentenceList.setIndex(TextElement.SENTENCE);
+			sentenceList.setIndex(TextElement.TEXT);
 		}
 
 		return sentenceList;
@@ -84,7 +69,8 @@ public class TextParse {
 
 	private Text parseToWord(String sentence) {
 		Text wordSignList = new Text();
-		Pattern rt = Pattern.compile(TextManager.getProperty().getProperty("regex.REGEX_WORD_AND_SIGN"));
+		Pattern rt = Pattern.compile(TextManager.getProperty().getProperty(
+				"regex.REGEX_WORD_AND_SIGN"));
 		Matcher matcher = rt.matcher(sentence);
 
 		String word = new String();
@@ -109,7 +95,7 @@ public class TextParse {
 				wordSignList
 						.addElement(new TextItem(number, TextElement.NUMBER));
 			}
-
+			wordSignList.setIndex(TextElement.SENTENCE);
 		}
 
 		return wordSignList;

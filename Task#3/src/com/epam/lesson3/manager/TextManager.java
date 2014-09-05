@@ -26,16 +26,19 @@ public class TextManager {
 		
 
 	}
-	public static Properties getProperty(){
-		FileInputStream fis;
-		Properties property=new Properties();
-		try{
-			fis=new FileInputStream("src/.properties");
-			property.load(fis);
-		}catch(IOException e){
-			 System.out.println("File is not exist");
+	
+	
+	public static String rText(Text text) {
+		StringBuilder sb = new StringBuilder();
+		Iterator iterator = text.createrIterator();
+		while(iterator.hasNext()){
+			TextElement element=(TextElement)iterator.next();
+			if(element.getIndex()==TextElement.TEXT){
+				System.out.println(element.getIndex());
+			}
 		}
-		return property;
+		return sb.toString();
 		
+
 	}
 }
