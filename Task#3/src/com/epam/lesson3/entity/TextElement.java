@@ -1,6 +1,8 @@
 package com.epam.lesson3.entity;
 
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 public abstract class TextElement {
 	public final static int TEXT = 1;
@@ -10,7 +12,7 @@ public abstract class TextElement {
 	public final static int SIGN = 5;
 	public final static int SPACE = 6;
 	public final static int NUMBER = 7;
-	private String content = new String();
+
 
 	public void addElement(TextElement te) {
 		throw new UnsupportedOperationException();
@@ -37,4 +39,10 @@ public abstract class TextElement {
 	public void setContent(String content) {
 		throw new UnsupportedOperationException();
 	}
+	public List<TextElement> getTextElements() {
+		throw new UnsupportedOperationException();
+
+	}
+
+	public abstract void setIndex(int text2);
 }

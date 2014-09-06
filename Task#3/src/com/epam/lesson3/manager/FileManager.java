@@ -8,7 +8,7 @@ import java.util.Properties;
 import java.util.Scanner;
 
 public class FileManager {
-	public String readFile(String filePath) {
+	public static String readFile(String filePath) {
 		String text = new String();
 		try {
 			FileReader fr = new FileReader(filePath);

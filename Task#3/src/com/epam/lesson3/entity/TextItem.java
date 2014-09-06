@@ -32,7 +32,7 @@ private int index=0;
 
 	@Override
 	public void print() {
-	System.out.println("\n"+getContent());
+	System.out.print(getContent());
 	}
 	
 
