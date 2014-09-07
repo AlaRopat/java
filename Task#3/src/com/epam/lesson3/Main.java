@@ -19,11 +19,9 @@ public class Main {
 		String text = FileManager.readFile("task2_text.txt");
 		Text wholeText = new Text();
 		TextElement tr = f.parseToText(wholeText, text);
-
-//		String txt = TextManager.buildText(tr);
-//		System.out.println(txt);
-		TextElement	rt=TextManager.replaceWord(tr, 2,11);
-		
-//rt.print();
+		String txt = TextManager.buildText(tr);
+		System.out.println(txt);
+		TextElement rt = TextManager.replaceWord(tr, 2, 11, "LALALA");
+		rt.print();
 	}
 }

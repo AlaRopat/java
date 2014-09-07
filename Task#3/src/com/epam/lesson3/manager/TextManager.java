@@ -29,39 +29,28 @@ public class TextManager {
 	}
 
 	public static TextElement replaceWord(TextElement text, int lengthWord,
-			int numberOfSentence) {
-		TextElement element = new Text();
+			int numberOfSentence, String replace) {
 		TextElement sentence = new Text();
-		Iterator it = text.createrIterator();
-		while (it.hasNext()) {
-			element = (TextElement) it.next();
+		Iterator iterator = text.createrIterator();
+		while (iterator.hasNext()) {
+			TextElement element = (TextElement) iterator.next();
 			if (element.getIndex() == TextElement.TEXT) {
 				try {
 					sentence = element.getTextElements().get(numberOfSentence);
-//					sentence.print();
-//					System.out.println("\n");
 					break;
-
 				} catch (Exception e) {
 					numberOfSentence -= element.getTextElements().size();
 				}
 			}
 		}
-		Iterator iterator = sentence.createrIterator();	
-		Pattern rt = Pattern.compile("(\\s\\w{"+lengthWord+"}\\s)");
-		
-		while (iterator.hasNext()) {
+		Iterator it = sentence.createrIterator();
+		while (it.hasNext()) {
 			TextElement word = (TextElement) it.next();
-			if (word.getIndex() == TextElement.WORD) {
-				Matcher matcher = rt.matcher(word.getContent());
-				if(matcher.find()){
-			String t=matcher.group();
-			System.out.println(t);
-				}
+			if (word.getIndex() == TextElement.WORD
+					&& word.getContent().length() == lengthWord) {
+				word.setContent(replace);
 			}
 		}
-
 		return text;
-
 	}
 }
