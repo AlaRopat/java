@@ -21,10 +21,11 @@ public class Main {
 		String text = FileManager.readFile("task2_text.txt");
 		Text wholeText = new Text();
 		TextElement tr = f.parseToText(wholeText, text);
+
 		String txt = TextManager.buildText(tr);
-		// System.out.println(txt);
-//		TextElement rt = TextManager.replaceWord(tr, 2, 11, "LALALA");
-		// rt.print();
+		System.out.println(txt);
+		TextElement rt = TextManager.replaceWord(tr, 2, 11, "LALALA");
+		rt.print();
 		Comparator<TextElement> comparator = new SortedByAlphabet();
 		List<TextElement> list = TextManager.sortedWord(tr, comparator);
 		Iterator<TextElement> it = list.iterator();
