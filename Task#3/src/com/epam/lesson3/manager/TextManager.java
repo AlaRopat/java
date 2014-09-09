@@ -3,6 +3,8 @@ package com.epam.lesson3.manager;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
@@ -53,4 +55,23 @@ public class TextManager {
 		}
 		return text;
 	}
+
+	public static List<TextElement> sortedWord(TextElement text,
+			Comparator<TextElement> comparator) {
+		ArrayList<TextElement> list = new ArrayList<TextElement>();
+		Iterator it = text.createrIterator();
+		while (it.hasNext()) {
+			TextElement element = (TextElement) it.next();
+			if (element.getIndex() == TextElement.WORD) {
+
+				list.add(element);
+			}
+
+		}
+		Collections.sort(list, comparator);
+		
+		return Collections.unmodifiableList(list);
+
+	}
+
 }
